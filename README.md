@@ -1,4 +1,4 @@
-# VaniCode 🎙️⚡
+# PromptVox 🎙️⚡
 > **Universal Voice Interface & Bilingual Speech-to-Code Layer for AI Coding Agents**  
 > *Zero-lag dictation, code-aware formatting, and flawless Hinglish-to-Latin transliteration across Google Antigravity, Cursor, Claude Code, and VS Code.*
 
@@ -14,7 +14,7 @@ AI coding agents (Antigravity, Cursor, Claude Code) thrive on long, detailed pro
    - **Antigravity IDE / VS Code** currently lacks an integrated microphone button in chat.
 3. **The Multilingual / Indian Accent Breakdown:** Existing speech-to-text models either output Devanagari Hindi script (`क्या आप सुन रहे हो`), hallucinate unwanted English translations (*"Bhai optimize karo"* $\rightarrow$ *"Brother do it"*), or drop words during natural bilingual code-switching.
 
-**VaniCode solves this completely.**
+**PromptVox solves this completely.**
 
 ---
 
@@ -89,8 +89,8 @@ AI coding agents (Antigravity, Cursor, Claude Code) thrive on long, detailed pro
 
 ```bash
 # Clone the repository
-git clone https://github.com/Abh-igyan/VaniCode.git
-cd VaniCode
+git clone https://github.com/Abh-igyan/PromptVox.git
+cd PromptVox
 
 # Install python dependencies
 pip install -r requirements.txt
@@ -155,3 +155,4 @@ Restart or reload VS Code. You will now see:
 ## 🛡️ License
 
 MIT License. Crafted with ❤️ for AI-native software engineering.
+
