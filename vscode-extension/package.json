@@ -1,9 +1,18 @@
 {
-  "name": "antigravity-voice-helper",
-  "displayName": "Antigravity Voice Typing",
-  "description": "In-built speech-to-text mic for Antigravity in VS Code (ChatGPT & Gemini style)",
+  "name": "promptvox-voice-helper",
+  "displayName": "PromptVox: Antigravity Voice Typing",
+  "description": "In-built speech-to-text mic for Antigravity in VS Code with zero-lag bilingual Hinglish support",
   "version": "1.1.0",
-  "publisher": "antigravity",
+  "publisher": "AbhigyanTiwari",
+  "author": {
+    "name": "Abhigyan Tiwari",
+    "email": "abhigyanph@gmail.com",
+    "url": "https://github.com/Abh-igyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Abh-igyan/PromptVox"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -18,7 +27,7 @@
     "commands": [
       {
         "command": "antigravity.voiceType",
-        "title": "Antigravity: Voice Type (Alt+V)",
+        "title": "PromptVox: Voice Type (Alt+V)",
         "icon": "$(mic)"
       }
     ],
