@@ -3,13 +3,19 @@ const http = require('http');
 const { spawn } = require('child_process');
 const path = require('path');
 
+const os = require('os');
+
 let statusBarItem;
 let pollTimer;
 let isRecording = false;
 let activeProgress = null;
 
-const PYTHON_PATH = 'C:\\Users\\Abhigyan\\AppData\\Local\\Programs\\Python\\Python312\\python.exe';
-const SCRIPT_PATH = 'C:\\Users\\Abhigyan\\antigravity-voice\\main.py';
+function getBackendConfig() {
+    const config = vscode.workspace.getConfiguration('promptvox');
+    const pythonPath = config.get('pythonPath') || process.env.PYTHON_PATH || 'python';
+    const scriptPath = config.get('scriptPath') || path.join(os.homedir(), 'antigravity-voice', 'main.py');
+    return { pythonPath, scriptPath };
+}
 
 function ensureBackendRunning() {
     return new Promise((resolve) => {
@@ -17,9 +23,9 @@ function ensureBackendRunning() {
             resolve(true);
         });
         req.on('error', () => {
-            // Spawn silent background worker
+            const { pythonPath, scriptPath } = getBackendConfig();
             try {
-                const child = spawn(PYTHON_PATH, [SCRIPT_PATH], {
+                const child = spawn(pythonPath, [scriptPath], {
                     detached: true,
                     stdio: 'ignore',
                     windowsHide: true

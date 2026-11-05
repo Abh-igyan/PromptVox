@@ -4,17 +4,15 @@
 
 ---
 
-## ⚡ The Problem
+## ⚡ The Motivation & Challenges
 
-AI coding agents (Antigravity, Cursor, Claude Code) thrive on long, detailed prompts containing architecture context, algorithmic edge cases, and technical requirements. However:
-1. **Typing detailed prompts is slow:** Developers lose flow state typing 5-line context prompts.
-2. **Built-in mics are siloed or non-existent:** 
-   - **Claude Code** is CLI-only with **zero** voice support.
-   - **Cursor's** native voice is locked strictly to its chat box (cannot dictate into the terminal, inline edits, git commits, or comments).
-   - **Antigravity IDE / VS Code** currently lacks an integrated microphone button in chat.
-3. **The Multilingual / Indian Accent Breakdown:** Existing speech-to-text models either output Devanagari Hindi script (`क्या आप सुन रहे हो`), hallucinate unwanted English translations (*"Bhai optimize karo"* $\rightarrow$ *"Brother do it"*), or drop words during natural bilingual code-switching.
+AI coding workflows thrive on long, detailed prompts containing architecture context, algorithmic edge cases, and technical requirements. However, using voice dictation in developer workflows introduces key challenges:
 
-**PromptVox solves this completely.**
+1. **The Multilingual / Indian Accent Breakdown:** Standard speech-to-text models either output Devanagari Hindi script (`क्या आप सुन रहे हो`), hallucinate unwanted English translations (*"Bhai optimize karo"* $\rightarrow$ *"Brother optimize"*), or drop words during natural bilingual code-switching.
+2. **Technical Vocabulary & Developer Tokens:** General-purpose STT models often fumble programming syntax and acronyms (`C++`, `DSA`, `CP`, `FastAPI`, `LeetCode`, `gVisor`, `SQL`), altering proper casing and punctuation.
+3. **In-Built Mic for Antigravity in VS Code:** While Antigravity IDE and CLI have native voice capabilities, the Antigravity VS Code extension did not include a native in-panel mic button. PromptVox provides an integrated microphone icon directly inside the Antigravity panel header in VS Code, alongside a universal OS-level shortcut (`Alt + V`).
+
+**PromptVox solves these challenges completely.**
 
 ---
 
@@ -28,12 +26,10 @@ AI coding agents (Antigravity, Cursor, Claude Code) thrive on long, detailed pro
 - **🧩 Silence-Partitioned Parallel Chunking:** Automatically segments audio on pauses $\ge 300\text{ ms}$ and processes chunks in parallel via a thread pool, breaking Whisper's single-language decoder lock.
 - **🛠️ Deterministic Developer Formatter:** Retains developer casing and acronyms (`C++`, `DSA`, `CP`, `FastAPI`, `LeetCode`, `API`, `SQL`, `gVisor`) without LLM hallucination.
 - **🌐 Universal OS-Level Injection:** Types directly into whichever window has active focus:
-  - Antigravity Chat
-  - Cursor Composer / Chat
-  - Claude Code CLI Terminal
-  - VS Code Editor / Inline Comments
-  - GitHub Copilot / Slack / Discord
-- **🔌 First-Class Antigravity & VS Code Extension:**
+  - Antigravity Chat (VS Code)
+  - Terminals & IDE Editors
+  - Cursor, Claude, or any text/chat input
+- **🔌 First-Class Antigravity VS Code Extension:**
   - Adds a native microphone icon inside the Antigravity chat panel header (`antigravity.panel`).
   - Status Bar item showing live recording status.
   - Auto-spawns and manages the backend daemon silently.
