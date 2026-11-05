@@ -1,0 +1,5 @@
+{
+  "groq_api_key": "YOUR_GROQ_API_KEY_HERE",
+  "use_cloud_stt": true,
+  "use_smart_refiner": false
+}

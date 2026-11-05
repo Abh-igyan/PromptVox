@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Local sensitive credentials & secrets
+config.json
+.env
+
+# Logs and transient audio
+*.wav
+*.mp3
+debug.log
+*.log
+
+# OS artifacts
+.DS_Store
+Thumbs.db

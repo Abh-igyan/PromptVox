@@ -1,0 +1,47 @@
+{
+  "name": "antigravity-voice-helper",
+  "displayName": "Antigravity Voice Typing",
+  "description": "In-built speech-to-text mic for Antigravity in VS Code (ChatGPT & Gemini style)",
+  "version": "1.1.0",
+  "publisher": "antigravity",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "antigravity.voiceType",
+        "title": "Antigravity: Voice Type (Alt+V)",
+        "icon": "$(mic)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "antigravity.voiceType",
+        "key": "alt+v",
+        "mac": "alt+v"
+      },
+      {
+        "command": "antigravity.voiceType",
+        "key": "ctrl+alt+v",
+        "mac": "cmd+alt+v"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "antigravity.voiceType",
+          "when": "view == antigravity.panel",
+          "group": "navigation"
+        }
+      ]
+    }
+  }
+}
